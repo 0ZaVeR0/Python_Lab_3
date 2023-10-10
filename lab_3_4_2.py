@@ -3,7 +3,7 @@ from datetime import datetime
 def nearest_time(times: str) -> str:
     time_diff = 9999999999
     for x in times:
-        if min(abs(time_convert(x) - c_time()), abs(time_convert(x) - time_convert('24:00:00') - c_time())) < time_diff:
+        if min(abs(time_convert(x) - c_time()), abs(time_convert(x) + time_convert('24:00:00') - c_time())) < time_diff:
             time_diff = abs(time_convert(x) - c_time())
             n_time = x
     return n_time
